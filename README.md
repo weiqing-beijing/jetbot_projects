@@ -5,3 +5,5 @@ the repo to track the learning path of using nVidia Jetson product family
 
    [caster ball design](./3D_Design/jetbot_caster_ball.png)
 
+2. i2c testing:
+   [i2c python files](./testing/)
