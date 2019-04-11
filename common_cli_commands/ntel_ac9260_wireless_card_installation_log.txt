@@ -1,0 +1,326 @@
+intel ac9260 driver installation log:
+
+jetbot@jetbot:~/Documents/repo/backport-iwlwifi$ make defconfig-iwlwifi-public
+make[2]: 'conf' is up to date.
+#
+# configuration written to .config
+#
+jetbot@jetbot:~/Documents/repo/backport-iwlwifi$ make -j4
+make[5]: 'conf' is up to date.
+#
+# configuration written to .config
+#
+Building backport-include/backport/autoconf.h ... done.
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/main.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/core.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/iwl-io.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/main.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/backport-4.10.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/backport-4.18.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/iwl-drv.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/backport-4.20.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/sysfs.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/status.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/backport-genetlink.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/radiotap.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/iwl-debug.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/verification/verify.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/util.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/iwl-eeprom-read.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/driver-ops.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/verification/pkcs7.asn1.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/verification/pkcs7_verify.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/verification/pkcs7_parser.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/iwl-eeprom-parse.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/sta_info.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/verification/x509.asn1.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/verification/x509_akid.asn1.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/verification/x509_cert_parser.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/reg.o
+In file included from ./include/linux/rhashtable.h:24:0,
+                 from /home/jetbot/Documents/repo/backport-iwlwifi/include/linux/rhashtable.h:3,
+                 from ./include/net/inet_frag.h:4,
+                 from /home/jetbot/Documents/repo/backport-iwlwifi/backport-include/net/inet_frag.h:3,
+                 from ./include/net/netns/ipv4.h:9,
+                 from ./include/net/net_namespace.h:17,
+                 from /home/jetbot/Documents/repo/backport-iwlwifi/backport-include/net/net_namespace.h:4,
+                 from ./include/linux/netdevice.h:43,
+                 from /home/jetbot/Documents/repo/backport-iwlwifi/backport-include/linux/netdevice.h:3,
+                 from ./include/linux/etherdevice.h:26,
+                 from /home/jetbot/Documents/repo/backport-iwlwifi/backport-include/linux/etherdevice.h:3,
+                 from /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/sta_info.c:15:
+./include/linux/jhash.h: In function ‘jhash2’:
+./include/linux/jhash.h:136:12: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  case 3: c += k[2];
+          ~~^~~~~~~
+./include/linux/jhash.h:137:2: note: here
+  case 2: b += k[1];
+  ^~~~
+./include/linux/jhash.h:137:12: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  case 2: b += k[1];
+          ~~^~~~~~~
+./include/linux/jhash.h:138:2: note: here
+  case 1: a += k[0];
+  ^~~~
+./include/linux/jhash.h: In function ‘jhash’:
+./include/linux/jhash.h:90:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  case 12: c += (u32)k[11]<<24;
+           ~~^~~~~~~~~~~~~~~~~
+./include/linux/jhash.h:91:2: note: here
+  case 11: c += (u32)k[10]<<16;
+  ^~~~
+./include/linux/jhash.h:91:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  case 11: c += (u32)k[10]<<16;
+           ~~^~~~~~~~~~~~~~~~~
+./include/linux/jhash.h:92:2: note: here
+  case 10: c += (u32)k[9]<<8;
+  ^~~~
+./include/linux/jhash.h:92:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  case 10: c += (u32)k[9]<<8;
+           ~~^~~~~~~~~~~~~~~
+./include/linux/jhash.h:93:2: note: here
+  case 9:  c += k[8];
+  ^~~~
+./include/linux/jhash.h:93:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  case 9:  c += k[8];
+           ~~^~~~~~~
+./include/linux/jhash.h:94:2: note: here
+  case 8:  b += (u32)k[7]<<24;
+  ^~~~
+./include/linux/jhash.h:94:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  case 8:  b += (u32)k[7]<<24;
+           ~~^~~~~~~~~~~~~~~~
+./include/linux/jhash.h:95:2: note: here
+  case 7:  b += (u32)k[6]<<16;
+  ^~~~
+./include/linux/jhash.h:95:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  case 7:  b += (u32)k[6]<<16;
+           ~~^~~~~~~~~~~~~~~~
+./include/linux/jhash.h:96:2: note: here
+  case 6:  b += (u32)k[5]<<8;
+  ^~~~
+./include/linux/jhash.h:96:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  case 6:  b += (u32)k[5]<<8;
+           ~~^~~~~~~~~~~~~~~
+./include/linux/jhash.h:97:2: note: here
+  case 5:  b += k[4];
+  ^~~~
+./include/linux/jhash.h:97:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  case 5:  b += k[4];
+           ~~^~~~~~~
+./include/linux/jhash.h:98:2: note: here
+  case 4:  a += (u32)k[3]<<24;
+  ^~~~
+./include/linux/jhash.h:98:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  case 4:  a += (u32)k[3]<<24;
+           ~~^~~~~~~~~~~~~~~~
+./include/linux/jhash.h:99:2: note: here
+  case 3:  a += (u32)k[2]<<16;
+  ^~~~
+./include/linux/jhash.h:99:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  case 3:  a += (u32)k[2]<<16;
+           ~~^~~~~~~~~~~~~~~~
+./include/linux/jhash.h:100:2: note: here
+  case 2:  a += (u32)k[1]<<8;
+  ^~~~
+./include/linux/jhash.h:100:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  case 2:  a += (u32)k[1]<<8;
+           ~~^~~~~~~~~~~~~~~
+./include/linux/jhash.h:101:2: note: here
+  case 1:  a += k[0];
+  ^~~~
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/iwl-phy-db.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/verification/x509_public_key.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/verification/pkcs7_trust.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/iwl-nvm-parse.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/verification/key.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/verification/public_key.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/wep.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/scan.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/verification/rsa.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/iwl-dbg-tlv.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/verification/bignum.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/aead_api.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/iwl-trans.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/wpa.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/verification/md.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/nl80211.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/fw/notif-wait.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/verification/md_wrap.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/scan.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/verification/sha256.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/verification/oid.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/pcie/drv.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/verification/asn1parse.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/verification/rsapubkey.asn1.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/lib-asn1_decoder.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/pcie/rx.o
+  GEN     /home/jetbot/Documents/repo/backport-iwlwifi/compat/oid_registry_data.c
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/lib-refcount.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/offchannel.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/lib-oid_registry.o
+  LD [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/compat.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/ht.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/pcie/tx.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/pcie/trans.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/agg-tx.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/pcie/ctxt-info.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/pcie/ctxt-info-gen3.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/pcie/trans-gen2.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/agg-rx.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/vht.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/pcie/tx-gen2.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/fw/paging.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/fw/smem.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/he.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/mlme.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/fw/init.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/fw/dbg.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/ibss.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/iface.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/ibss.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/sme.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/cfg/7000.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/rate.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/chan.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/cfg/8000.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/cfg/9000.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/cfg/22000.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/fw/debugfs.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/iwl-dbg-cfg.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/ethtool.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/michael.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/tkip.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/iwl-devtrace.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/aes_cmac.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/mesh.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/aes_gmac.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/ap.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/trace.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/fils_aead.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/ocb.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/iwl-tm-gnl.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/cfg.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/iwl-dnt-cfg.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/ethtool.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/iwl-dnt-dispatch.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/rx.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/spectmgmt.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/iwl-dnt-dev-if.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/tx.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/fw/testmode.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/pmsr.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/xvt/xvt.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/fw.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/of.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/xvt/user-infc.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/key.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/mac80211.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/debugfs.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/xvt/utils.o
+  GEN     /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/shipped-certs.c
+  GEN     /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/extra-certs.c
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/shipped-certs.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/xvt/fw.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/util.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/extra-certs.o
+  LD [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/cfg80211.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/xvt/nvm.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/xvt/rx.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/nvm.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/ops.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/xvt/debugfs.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/phy-ctxt.o
+  LD [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/xvt/iwlxvt.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/wme.o
+  LD [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/iwlwifi.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/mac-ctxt.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/utils.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/rx.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/chan.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/rxmq.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/trace.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/tx.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/mlme.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/binding.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/quota.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/sta.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/sf.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/tdls.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/scan.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/ocb.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/led.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/debugfs.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/debugfs_sta.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/time-event.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/debugfs_netdev.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/rs.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/rs-fw.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/debugfs_key.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/pm.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/power.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/rc80211_minstrel.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/coex.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/rc80211_minstrel_ht.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/rc80211_minstrel_debugfs.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/tt.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/offloading.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/rc80211_minstrel_ht_debugfs.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/tdls.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/ftm-initiator.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/ftm-responder.o
+  LD [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/mac80211.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/nan.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/debugfs.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/debugfs-vif.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/led.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/d3.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/vendor-cmd.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/fm-ops.o
+  CC [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/fm-test.o
+/home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/vendor-cmd.c:1472:12: warning: ‘iwl_mvm_vendor_test_fips’ defined but not used [-Wunused-function]
+ static int iwl_mvm_vendor_test_fips(struct wiphy *wiphy,
+            ^~~~~~~~~~~~~~~~~~~~~~~~
+  LD [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/iwlmvm.o
+  Building modules, stage 2.
+  MODPOST 6 modules
+  CC      /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/iwlwifi.mod.o
+  CC      /home/jetbot/Documents/repo/backport-iwlwifi/compat/compat.mod.o
+  CC      /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/iwlmvm.mod.o
+  CC      /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/xvt/iwlxvt.mod.o
+  CC      /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/mac80211.mod.o
+  CC      /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/cfg80211.mod.o
+  LD [M]  /home/jetbot/Documents/repo/backport-iwlwifi/compat/compat.ko
+  LD [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/iwlmvm.ko
+  LD [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/xvt/iwlxvt.ko
+  LD [M]  /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/iwlwifi.ko
+  LD [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/cfg80211.ko
+  LD [M]  /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/mac80211.ko
+jetbot@jetbot:~/Documents/repo/backport-iwlwifi$ sudo make install
+[sudo] password for jetbot: 
+  Building modules, stage 2.
+  MODPOST 6 modules
+  INSTALL /home/jetbot/Documents/repo/backport-iwlwifi/compat/compat.ko
+  INSTALL /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/iwlwifi.ko
+  INSTALL /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/mvm/iwlmvm.ko
+  INSTALL /home/jetbot/Documents/repo/backport-iwlwifi/drivers/net/wireless/intel/iwlwifi/xvt/iwlxvt.ko
+  INSTALL /home/jetbot/Documents/repo/backport-iwlwifi/net/mac80211/mac80211.ko
+  INSTALL /home/jetbot/Documents/repo/backport-iwlwifi/net/wireless/cfg80211.ko
+  DEPMOD  4.9.140-tegra
+depmod will prefer updates/ over kernel/ -- OK!
+Note:
+You may or may not need to update your initramfs, you should if
+any of the modules installed are part of your initramfs. To add
+support for your distribution to do this automatically send a
+patch against "update-initramfs.sh". If your distribution does not
+require this send a patch with the '/usr/bin/lsb_release -i -s'
+("Ubuntu") tag for your distribution to avoid this warning.
+
+Your backported driver modules should be installed now.
+Reboot.
+
+jetbot@jetbot:~/Documents/repo/backport-iwlwifi$ ls /lib/firmware |grep 9260
+iwlwifi-9260-th-b0-jf-b0-33.ucode
+iwlwifi-9260-th-b0-jf-b0-34.ucode
+iwlwifi-9260-th-b0-jf-b0-38.ucode
+
