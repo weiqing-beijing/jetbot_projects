@@ -1,0 +1,82 @@
+1. to pip install 'pycuda>=2017.1.1' in virtualenv in jetson nano:
+	- without the below PATH pip could not find cuda.h
+	- add these path to $PATH:
+		/usr/local/cuda:
+		/usr/local/cuda-10.0:
+		/usr/local/cuda-10.0/:
+		/usr/local/cuda-10.0/bin/
+	-or can set CUDA_INC_DIR permanantly for installation to be succeeful
+
+2. switch on pwm fan: 
+	- /sys/devices/pwm-fan
+
+3. to check current envirnment run command: $env
+
+4. install TensorRT:
+	- as above install pyCuda
+	- download tensorRT tar file: https://docs.nvidia.com/deeplearning/sdk/tensorrt-install-guide/index.html
+	- move the download file to virtualenv working directory:
+		$ mv ~/Downloads/TensorRT-5.0.2.6.Ubuntu-18.04.1.x86_64-gnu.cuda-10.0.cudnn7.3.tar.gz ./
+	- $ tar xzvf TensorRT-5.0.2.6.Ubuntu-18.04.1.x86_64-gnu.cuda-10.0.cudnn7.3.tar.gz
+	- $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/working/jetbotenv/TensorRT-5.0.2.6/lib
+	- (jetbotenv) weiqing@weiqing-nano:~/working/jetbotenv/TensorRT-5.0.2.6/python$ pip install tensorrt-5.0.2.6-py2.py3-none-any.whl
+		- log: 	Processing ./tensorrt-5.0.2.6-py2.py3-none-any.whl
+			Requirement already satisfied: numpy in /home/weiqing/working/jetbotenv/lib/python3.6/site-packages (from tensorrt==5.0.2.6) (1.16.2)
+			Installing collected packages: tensorrt
+			Successfully installed tensorrt-5.0.2.6
+	- after successfully installed tensorrt, still cannot import tensorrt bu showing no tensorrt.so file in /home/weiqing/working/jetbotenv/lib/python3.6/site-packages even there is
+	- pip uninstall tensorrt and copy the tensorrt folder from /usr/lib/python3.6/dist-packages and it works even without 'pip list' shwoing the package name of tensorrt
+	- copy the mnist file from /usr/lib/python3.6/dist-packages as well
+
+
+5. using vnc(https://bugs.launchpad.net/ubuntu/+source/unity-control-center/+bug/1741027/comments/11)
+
+- Here is an ugly 3 steps workaround:
+
+	1) Edit the org.gnome.Vino schema to restore the missing "enabled" parameter (copying from 16.04)
+
+	sudo nano /usr/share/glib-2.0/schemas/org.gnome.Vino.gschema.xml
+
+	Add this key:
+    	<key name='enabled' type='b'>
+      	    <summary>Enable remote access to the desktop</summary>
+      	        <description>
+        	    If true, allows remote access to the desktop via the RFB
+        	    protocol. Users on remote machines may then connect to the
+      	            desktop using a VNC viewer.
+      	        </description>
+      	    <default>false</default>
+        </key>
+
+	2) Compile the schemas for Gnome:
+
+	sudo glib-compile-schemas /usr/share/glib-2.0/schemas
+
+	3) Now the screen sharing panel in unity-control-center works... but this is not enough to get vino running! So you need to add in the programs at session start: Vino-server with the following command line:
+
+	/usr/lib/vino/vino-server
+
+	Now you can VNC your 18.04-Unity!
+
+
+6. install x11vnc server from ubuntu software store
+need to prvide password and check accept connection first. the password is only used once.
+
+7. To edit files in gedit from GUI, go to terminal and $sudo chown  USER:USERGROUP FILE_NAME(or with -R DIRECTORY_NAME/), i.e. sudo chown weiqing:weiqing jetson_nano_log.txt
+
+8. use cron to automate start-up actions:
+https://askubuntu.com/questions/2368/how-do-i-set-up-a-cron-job
+https://vexxhost.com/resources/tutorials/how-to-use-cron-jobs-for-automation-on-ubuntu-14-04/
+
+- sudo apt-get install cron
+- service cron start
+- service cron status
+
+edit crontab file as root user. can be done in different ways:
+	- https://superuser.com/questions/1074438/cant-start-a-job-with-cron-on-ubuntu-startup
+		$sudo -i
+		#echo "/usr/bin/python /home/adi/pythons/python1.py" >> /etc/rc.local
+		#exit
+	- sudo crontab -e
+	- @reboot echo 64 > /sys/devices/pwm-fan/target_pwm
+	- sudo reboot
